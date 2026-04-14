@@ -32,6 +32,7 @@ section[id] {
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   font-family: "Inter", sans-serif;
   color: var(--text);
   background:
@@ -484,6 +485,7 @@ textarea:focus-visible {
   color: var(--text);
   font-size: 1.4rem;
   line-height: 1.04;
+  overflow-wrap: anywhere;
 }
 
 .about-dossier__parts {
@@ -539,6 +541,7 @@ textarea:focus-visible {
   color: var(--text);
   font-size: 0.94rem;
   line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 .about-flag-stack {
@@ -710,6 +713,7 @@ textarea:focus-visible {
   color: #8a847d;
   font-size: 0.94rem;
   line-height: 1.42;
+  overflow-wrap: anywhere;
 }
 
 .greeting-card__body {
@@ -720,11 +724,27 @@ textarea:focus-visible {
   line-height: 1.62;
   font-style: italic;
   text-wrap: pretty;
+  overflow-wrap: anywhere;
 }
 
 .tab-layout {
   display: grid;
   gap: 18px;
+}
+
+.scroll-hint {
+  display: none;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.scroll-strip {
+  position: relative;
+  min-width: 0;
 }
 
 .tab-nav {
@@ -1368,13 +1388,14 @@ textarea:focus-visible {
     justify-items: start;
   }
 
-  .banner-card__content {
+  .banner-card__media {
     order: -1;
-    padding: 36px 32px 30px;
+    min-height: 400px;
   }
 
-  .banner-card__media {
-    min-height: 400px;
+  .banner-card__content {
+    order: 0;
+    padding: 36px 32px 30px;
   }
 
   .banner-card h1 {
@@ -1402,8 +1423,9 @@ textarea:focus-visible {
     flex-wrap: nowrap;
     justify-content: flex-start;
     overflow-x: auto;
-    padding-bottom: 6px;
+    padding: 0 24px 6px 10px;
     scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
   }
 
   .tab-nav__button,
@@ -1411,6 +1433,31 @@ textarea:focus-visible {
   .program-hall {
     flex: 0 0 auto;
     white-space: nowrap;
+  }
+
+  .scroll-hint--mobile {
+    display: block;
+  }
+
+  .scroll-strip::before,
+  .scroll-strip::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 6px;
+    width: 18px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .scroll-strip::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(242, 238, 232, 0.96), rgba(242, 238, 232, 0));
+  }
+
+  .scroll-strip::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(242, 238, 232, 0.96), rgba(242, 238, 232, 0));
   }
 
   .cookie-consent__inner {
@@ -1460,12 +1507,16 @@ textarea:focus-visible {
     gap: 14px;
   }
 
+  .site-header {
+    top: 0;
+  }
+
   .site-nav {
     width: 100%;
     gap: 10px;
     justify-content: initial;
     justify-self: stretch;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .site-brand,
@@ -1491,18 +1542,20 @@ textarea:focus-visible {
 
   .site-nav a {
     width: 100%;
-    min-height: 42px;
-    padding: 0 10px;
+    min-height: 44px;
+    padding: 10px 12px;
     font-size: 0.72rem;
+    line-height: 1.2;
+    white-space: normal;
     justify-content: center;
   }
 
   .banner-card__content {
-    padding: 28px 20px 24px;
+    padding: 24px 18px 22px;
   }
 
   .banner-card h1 {
-    max-width: 9.4ch;
+    max-width: 8.6ch;
     font-size: clamp(1.9rem, 9.4vw, 2.55rem);
     line-height: 0.96;
     text-wrap: balance;
@@ -1514,17 +1567,19 @@ textarea:focus-visible {
   }
 
   .banner-card__media {
-    min-height: 320px;
+    min-height: 264px;
   }
 
   .banner-card__lede {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 0.98rem;
+    line-height: 1.56;
   }
 
   .banner-card__meta-line {
-    margin-bottom: 20px;
-    font-size: 0.9rem;
+    margin-bottom: 18px;
+    font-size: 0.86rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
   }
 
   .banner-card__action {
@@ -1532,8 +1587,8 @@ textarea:focus-visible {
   }
 
   .banner-hero-visual img {
-    object-position: 8% center;
-    transform: scale(1.08);
+    object-position: 12% center;
+    transform: scale(1.04);
   }
 
   .section {
@@ -1574,25 +1629,34 @@ textarea:focus-visible {
     padding: 18px;
   }
 
+  .about-dossier__parts {
+    grid-template-columns: 1fr;
+  }
+
   .about-dossier__summary strong {
     font-size: 1.34rem;
   }
 
   .about-dossier__part {
-    padding: 14px;
+    padding: 16px 14px;
   }
 
   .greeting-card {
     min-height: auto;
-    padding: 16px 14px;
+    padding: 20px 16px;
   }
 
   .greetings-carousel {
     gap: 14px;
   }
 
+  .greetings-carousel__viewport {
+    width: 100%;
+    padding: 0 4px;
+  }
+
   .greetings-slide {
-    padding: 0 0 4px;
+    padding: 0 2px 6px;
   }
 
   .greetings-carousel__controls {
@@ -1619,15 +1683,15 @@ textarea:focus-visible {
   }
 
   .greeting-card__body {
-    font-size: 1rem;
-    line-height: 1.62;
+    font-size: 0.98rem;
+    line-height: 1.68;
   }
 
   .tab-content,
   .program-box,
   .registration-panel,
   .contacts-panel {
-    padding: 18px;
+    padding: 20px 16px;
   }
 
   .org-block__org,
@@ -1653,8 +1717,17 @@ textarea:focus-visible {
 
   .program-day,
   .program-hall {
-    width: 100%;
+    width: auto;
     max-width: none;
+  }
+
+  .program-day {
+    min-width: 164px;
+    padding-inline: 18px;
+  }
+
+  .program-hall {
+    min-width: 168px;
   }
 
   .program-item {
@@ -1664,6 +1737,22 @@ textarea:focus-visible {
   .policy-card {
     padding: 18px;
     border-radius: 20px;
+  }
+
+  .cookie-consent {
+    bottom: 12px;
+  }
+
+  .cookie-consent__inner {
+    width: min(calc(100% - 24px), 520px);
+    gap: 12px;
+    padding: 14px 14px 16px;
+    border-radius: 18px;
+  }
+
+  .cookie-consent__text {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 
   .program-item__body {
