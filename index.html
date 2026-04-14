@@ -8,6 +8,11 @@
       name="description"
       content="I Международный научно-практический форум «Встреча двух столиц. Москва - Бишкек», 23 апреля 2026 года, Бишкек."
     />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-src 'none'; media-src 'self'; form-action 'self' mailto:;"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -43,12 +48,15 @@
         <section class="banner">
           <div class="container">
             <div class="banner-card">
-              <div class="banner-card__media" aria-label="Флаги России и Кыргызстана">
-                <figure class="banner-flag banner-flag--primary">
-                  <img src="assets/images/flag-russia.jpg" alt="Флаг России" />
-                </figure>
-                <figure class="banner-flag banner-flag--secondary">
-                  <img src="assets/images/flag-kyrgyzstan.jpg" alt="Флаг Кыргызстана" />
+              <div class="banner-card__media">
+                <figure class="banner-hero-visual">
+                  <img
+                    src="assets/images/forum-hero-banner.jpg"
+                    alt="Коллаж с архитектурными образами Москвы и Бишкека"
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="async"
+                  />
                 </figure>
               </div>
 
@@ -56,7 +64,7 @@
                 <p class="banner-card__eyebrow">I Международный научно-практический форум</p>
                 <h1>Встреча двух столиц. <br />Москва - Бишкек</h1>
                 <p class="banner-card__lede">
-                  Академическая площадка для междисциплинарного профессионального диалога между
+                  Академическая площадка для профессионального диалога между
                   Москвой и Бишкеком.
                 </p>
                 <p class="banner-card__meta-line">
@@ -160,9 +168,8 @@
 
         <section class="section section--white" id="greetings">
           <div class="container">
-            <div class="section-title section-title--center">
+            <div class="section-title">
               <h2>Приветственные слова</h2>
-              <span class="section-title__line" aria-hidden="true"></span>
             </div>
 
             <div class="greetings-carousel" data-carousel="greetings">
@@ -201,6 +208,31 @@
                       и обсуждения актуальных вызовов в области медицины. Уверена, что результаты
                       нашей совместной работы внесут существенный вклад в охрану здоровья
                       наших граждан.
+                    </p>
+                  </article>
+
+                  <article class="greeting-card greetings-slide">
+                    <div class="greeting-card__header">
+                      <img
+                        class="greeting-card__logo--kidney"
+                        src="assets/images/kidney-society.png"
+                        alt="Логотип Общества специалистов по хронической болезни почек"
+                      />
+                      <div>
+                        <h3>Муркамилов И.Т.</h3>
+                        <p>Академик РАЕ, д.м.н., председатель правления Общества специалистов по хронической болезни почек Кыргызстана</p>
+                      </div>
+                    </div>
+                    <p class="greeting-card__body">
+                      Уважаемые коллеги! Форум "Встреча двух столиц. Москва - Бишкек"
+                      представляет собой профессиональную площадку для обсуждения актуальных
+                      вопросов внутренней медицины, нефрологии, кардиологии и смежных
+                      направлений. Рассчитываю, что представленные доклады, секционные
+                      дискуссии и обмен клиническим опытом будут способствовать развитию
+                      совместных исследований, внедрению современных подходов в практическое
+                      здравоохранение и расширению научного сотрудничества между специалистами
+                      наших стран. Желаю участникам содержательной работы и профессионально
+                      значимых результатов.
                     </p>
                   </article>
 
@@ -330,20 +362,20 @@
                 <strong>Пленарное заседание</strong>
               </article>
               <article class="program-overview__card">
-                <span>14:00-16:50</span>
-                <strong>Секция имени Е.И.&nbsp;Чазова — М.М.&nbsp;Миррахимова</strong>
+                <span>14:00-16:40</span>
+                <strong>Секция 1.<br />Памяти Е.И.&nbsp;Чазова — М.М.&nbsp;Миррахимова</strong>
               </article>
               <article class="program-overview__card">
-                <span>14:00-17:00</span>
-                <strong>Секция имени Е.М.&nbsp;Тареева — А.М.&nbsp;Мурзалиева</strong>
+                <span>14:00-16:50</span>
+                <strong>Секция 2.<br />Памяти Е.М.&nbsp;Тареева — А.М.&nbsp;Мурзалиева</strong>
               </article>
               <article class="program-overview__card">
                 <span>14:00-16:30</span>
-                <strong>Секция имени Н.А.&nbsp;Мухина — А.И.&nbsp;Мартынова</strong>
+                <strong>Секция 3.<br />Памяти Н.А.&nbsp;Мухина — А.И.&nbsp;Мартынова</strong>
               </article>
               <article class="program-overview__card">
                 <span>14:00-16:20</span>
-                <strong>Секция 4. Дорогу&nbsp;&ndash; молодым</strong>
+                <strong>Секция 4.<br />Дорогу&nbsp;&ndash; молодым</strong>
               </article>
               <article class="program-overview__card program-overview__card--roundtable">
                 <span>15:00-16:00</span>
@@ -367,7 +399,7 @@
             </div>
 
             <div class="program-download">
-              <a href="assets/program-bishkek-2026.docx" download>СКАЧАТЬ ПОДРОБНУЮ ПРОГРАММУ</a>
+              <a href="assets/moskva-bishkek-program-2026-final.pdf" download="Москва-Бишкек_программа_финал.pdf">СКАЧАТЬ ПОДРОБНУЮ ПРОГРАММУ</a>
             </div>
           </div>
         </section>
@@ -381,7 +413,7 @@
               Очная регистрация на форум завершена.
             </p>
             <p class="registration-status">
-              <strong>Ключевой срок:</strong> до 19 апреля 2026 года принимаются заявки,
+              <strong>Ключевой срок:</strong> до 23 апреля 2026 года принимаются заявки,
               тезисы и материалы для всех оставшихся форматов участия.
             </p>
 
@@ -394,7 +426,7 @@
                       <li><strong>Даты:</strong> 28-29 апреля 2026 года.</li>
                       <li><strong>Направления:</strong> естественно-научное, инженерно-техническое, социо-гуманитарное и аграрное; иные доклады могут быть включены в программу по решению организационного комитета.</li>
                       <li><strong>Регламент выступления:</strong> до 10 минут.</li>
-                      <li><strong>Срок регистрации и подачи материалов:</strong> до 19 апреля 2026 года.</li>
+                      <li><strong>Срок регистрации и подачи материалов:</strong> до 23 апреля 2026 года.</li>
                       <li><strong>Для регистрации:</strong> заполненная регистрационная форма участника.</li>
                       <li><strong>При заявке доклада:</strong> название доклада и краткие тезисы 7-10 предложений отдельным файлом.</li>
                       <li><strong>После отправки:</strong> подтверждение поступления заявки и материалов направляется в течение 7 дней, ссылка на подключение и организационная информация высылаются зарегистрированным участникам дополнительно.</li>
@@ -406,7 +438,7 @@
                     <ul class="registration-list">
                       <li>Заочное участие возможно через публикацию научной статьи в научных журналах издательской платформы Российской академии естествознания.</li>
                       <li>Публикация осуществляется по правилам выбранного журнала, размещенным на его официальном сайте.</li>
-                      <li>Для учета участия в форуме рекомендуется до <strong>19 апреля 2026 года</strong> направить регистрационную форму с указанием выбранного журнала и названия статьи.</li>
+                      <li>Для учета участия в форуме рекомендуется до <strong>23 апреля 2026 года</strong> направить регистрационную форму с указанием выбранного журнала и названия статьи.</li>
                       <li>После опубликования статьи сертификат участника будет доступен в личном портфеле автора.</li>
                     </ul>
                   </article>
@@ -426,7 +458,7 @@
                   <h3>Заочное участие: Сборник трудов форума</h3>
                   <ul class="contact-card__list">
                     <li>В Сборнике трудов могут быть опубликованы статьи, тезисы докладов и краткие научные сообщения по всем научным направлениям форума.</li>
-                    <li><strong>Срок представления материалов:</strong> до 19 апреля 2026 года.</li>
+                    <li><strong>Срок представления материалов:</strong> до 23 апреля 2026 года.</li>
                     <li><strong>Пакет документов одним письмом:</strong> текст материала и регистрационная форма участника.</li>
                     <li><strong>Подтверждение:</strong> поступление материалов подтверждается организационным комитетом в течение 7 дней.</li>
                     <li><strong>Краткие требования к оформлению:</strong> Times New Roman, шрифт не менее 12, межстрочный интервал 1,5, поля по 2 см; обязательны название работы, место выполнения, фамилии и инициалы авторов на русском и английском языках; текст предоставляется на русском языке.</li>
@@ -435,17 +467,17 @@
                 <article class="contact-card">
                   <h3>Журналы РАЕ</h3>
                   <ul class="contact-card__links">
-                    <li><a href="https://science-education.ru/" target="_blank" rel="noreferrer">Современные проблемы науки и образования</a></li>
-                    <li><a href="https://natural-sciences.ru/ru/" target="_blank" rel="noreferrer">Успехи современного естествознания</a></li>
-                    <li><a href="https://fundamental-research.ru/" target="_blank" rel="noreferrer">Фундаментальные исследования</a></li>
-                    <li><a href="https://top-technologies.ru/" target="_blank" rel="noreferrer">Современные наукоемкие технологии</a></li>
-                    <li><a href="https://science-medicine.ru/" target="_blank" rel="noreferrer">Научное обозрение. Медицинские науки</a></li>
-                    <li><a href="https://science-biology.ru/" target="_blank" rel="noreferrer">Научное обозрение. Биологические науки</a></li>
-                    <li><a href="https://science-pedagogy.ru/" target="_blank" rel="noreferrer">Научное обозрение. Педагогические науки</a></li>
-                    <li><a href="https://science-engineering.ru/" target="_blank" rel="noreferrer">Научное обозрение. Технические науки</a></li>
-                    <li><a href="https://science-economy.ru/" target="_blank" rel="noreferrer">Научное обозрение. Экономические науки</a></li>
-                    <li><a href="https://expeducation.ru/" target="_blank" rel="noreferrer">Международный журнал экспериментального образования</a></li>
-                    <li><a href="https://applied-research.ru/" target="_blank" rel="noreferrer">Международный журнал прикладных и фундаментальных исследований</a></li>
+                    <li><a href="https://science-education.ru/" target="_blank" rel="noopener noreferrer">Современные проблемы науки и образования</a></li>
+                    <li><a href="https://natural-sciences.ru/ru/" target="_blank" rel="noopener noreferrer">Успехи современного естествознания</a></li>
+                    <li><a href="https://fundamental-research.ru/" target="_blank" rel="noopener noreferrer">Фундаментальные исследования</a></li>
+                    <li><a href="https://top-technologies.ru/" target="_blank" rel="noopener noreferrer">Современные наукоемкие технологии</a></li>
+                    <li><a href="https://science-medicine.ru/" target="_blank" rel="noopener noreferrer">Научное обозрение. Медицинские науки</a></li>
+                    <li><a href="https://science-biology.ru/" target="_blank" rel="noopener noreferrer">Научное обозрение. Биологические науки</a></li>
+                    <li><a href="https://science-pedagogy.ru/" target="_blank" rel="noopener noreferrer">Научное обозрение. Педагогические науки</a></li>
+                    <li><a href="https://science-engineering.ru/" target="_blank" rel="noopener noreferrer">Научное обозрение. Технические науки</a></li>
+                    <li><a href="https://science-economy.ru/" target="_blank" rel="noopener noreferrer">Научное обозрение. Экономические науки</a></li>
+                    <li><a href="https://expeducation.ru/" target="_blank" rel="noopener noreferrer">Международный журнал экспериментального образования</a></li>
+                    <li><a href="https://applied-research.ru/" target="_blank" rel="noopener noreferrer">Международный журнал прикладных и фундаментальных исследований</a></li>
                   </ul>
                 </article>
               </div>
@@ -490,13 +522,16 @@
           <footer class="site-footer">
         <div class="container">
           <p>
-            &copy; Российская академия естествознания, 2026
+            &copy; Международная академия естествознания, 2026
           </p>
           <p>
             Оргкомитет:
             <a href="mailto:academy@rae.ru">academy@rae.ru</a>
             · Техническая поддержка:
             <a href="mailto:support@rae.ru">support@rae.ru</a>
+          </p>
+          <p>
+            <a href="privacy-policy.html">Политика обработки персональных данных</a>
           </p>
         </div>
       </footer>
