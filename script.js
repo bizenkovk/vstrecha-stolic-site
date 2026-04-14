@@ -631,6 +631,15 @@ function formatMultilineText(value) {
   return escapeHtml(value).replaceAll("\n", "<br>");
 }
 
+function formatProgramIntroText(value) {
+  const normalizedValue = value.replace(
+    /\s*(Сопредседатели:|Модераторы:|Секретариат:)/g,
+    "\n$1"
+  );
+
+  return formatMultilineText(normalizedValue.trim());
+}
+
 function initNonBreakingInitials(root = document.body) {
   if (!root) return;
 
@@ -804,7 +813,7 @@ function initProgram() {
         : "";
 
     contentRoot.innerHTML = `
-      <p class="program-content__intro">${formatMultilineText(activeHall.intro)}</p>
+      <p class="program-content__intro">${formatProgramIntroText(activeHall.intro)}</p>
       ${participantsMarkup}
       <div class="program-table">
         ${activeHall.items
