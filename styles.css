@@ -732,19 +732,56 @@ textarea:focus-visible {
   gap: 18px;
 }
 
-.scroll-hint {
-  display: none;
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+.scroll-wrap {
+  display: grid;
+  gap: 12px;
 }
 
 .scroll-strip {
   position: relative;
   min-width: 0;
+}
+
+.scroll-controls {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 2px;
+}
+
+.scroll-controls__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid #e2d4be;
+  border-radius: 999px;
+  background: #fffaf3;
+  color: var(--red-source);
+  font: inherit;
+  font-size: 1.02rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    opacity 180ms ease;
+}
+
+.scroll-controls__button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: #d2b07b;
+  background: #fff1e7;
+}
+
+.scroll-controls__button:disabled {
+  opacity: 0.34;
+  cursor: default;
 }
 
 .tab-nav {
@@ -1441,8 +1478,8 @@ textarea:focus-visible {
     white-space: nowrap;
   }
 
-  .scroll-hint--mobile {
-    display: block;
+  .scroll-wrap.is-scrollable .scroll-controls {
+    display: flex;
   }
 
   .scroll-strip::before,
@@ -1649,7 +1686,7 @@ textarea:focus-visible {
 
   .greeting-card {
     min-height: auto;
-    padding: 20px 16px;
+    padding: 22px 20px 24px;
   }
 
   .greetings-carousel {
@@ -1658,11 +1695,11 @@ textarea:focus-visible {
 
   .greetings-carousel__viewport {
     width: 100%;
-    padding: 0 4px;
+    padding: 0 8px;
   }
 
   .greetings-slide {
-    padding: 0 2px 6px;
+    padding: 0 4px 8px;
   }
 
   .greetings-carousel__controls {
@@ -1676,7 +1713,7 @@ textarea:focus-visible {
   }
 
   .greeting-card__header {
-    gap: 12px;
+    gap: 14px;
   }
 
   .greeting-card__header img.greeting-card__logo--kidney {
@@ -1690,7 +1727,7 @@ textarea:focus-visible {
 
   .greeting-card__body {
     font-size: 0.98rem;
-    line-height: 1.68;
+    line-height: 1.72;
   }
 
   .tab-content,
@@ -1698,6 +1735,15 @@ textarea:focus-visible {
   .registration-panel,
   .contacts-panel {
     padding: 20px 16px;
+  }
+
+  .tab-layout {
+    gap: 22px;
+  }
+
+  .tab-layout > .scroll-wrap,
+  .program-box > .scroll-wrap {
+    margin-top: 6px;
   }
 
   .org-block__org,

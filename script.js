@@ -759,6 +759,54 @@ function initSimpleTabs() {
   });
 }
 
+function initHorizontalScrollControls() {
+  document.querySelectorAll("[data-scroll-wrapper]").forEach((wrapper) => {
+    const strip = wrapper.querySelector(".scroll-strip");
+    const scroller = strip?.firstElementChild;
+    const prevButton = wrapper.querySelector('[data-scroll-direction="prev"]');
+    const nextButton = wrapper.querySelector('[data-scroll-direction="next"]');
+
+    if (!strip || !scroller || !prevButton || !nextButton) return;
+
+    const updateControls = () => {
+      const canScroll = scroller.scrollWidth - scroller.clientWidth > 6;
+      const isAtStart = scroller.scrollLeft <= 4;
+      const isAtEnd = scroller.scrollLeft + scroller.clientWidth >= scroller.scrollWidth - 4;
+
+      wrapper.classList.toggle("is-scrollable", canScroll);
+      prevButton.disabled = !canScroll || isAtStart;
+      nextButton.disabled = !canScroll || isAtEnd;
+    };
+
+    const scrollByStep = (direction) => {
+      const step = Math.max(scroller.clientWidth * 0.72, 140);
+
+      scroller.scrollBy({
+        left: direction === "next" ? step : -step,
+        behavior: "smooth"
+      });
+    };
+
+    prevButton.addEventListener("click", () => {
+      scrollByStep("prev");
+    });
+
+    nextButton.addEventListener("click", () => {
+      scrollByStep("next");
+    });
+
+    scroller.addEventListener("scroll", updateControls, { passive: true });
+    window.addEventListener("resize", updateControls, { passive: true });
+
+    const observer = new MutationObserver(() => {
+      updateControls();
+    });
+
+    observer.observe(scroller, { childList: true, subtree: false });
+    updateControls();
+  });
+}
+
 function initProgram() {
   const daysRoot = document.getElementById("programDays");
   const hallsRoot = document.getElementById("programHalls");
@@ -1002,6 +1050,7 @@ function initCookieConsent() {
 initSimpleTabs();
 initCommittees();
 initProgram();
+initHorizontalScrollControls();
 initGreetingsCarousel();
 initCookieConsent();
 initNonBreakingInitials();

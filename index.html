@@ -280,13 +280,22 @@
             </div>
 
             <div class="tab-layout" data-tabs="committee">
-              <p class="scroll-hint scroll-hint--mobile">Листайте вкладки влево и вправо</p>
-              <div class="scroll-strip">
-                <div class="tab-nav" role="tablist" aria-label="Организаторы и комитеты">
-                  <button class="tab-nav__button is-active" type="button" data-tab="orgs">Организаторы</button>
-                  <button class="tab-nav__button" type="button" data-tab="co-chairs">Сопредседатели</button>
-                  <button class="tab-nav__button" type="button" data-tab="program-committee">Программный комитет</button>
-                  <button class="tab-nav__button" type="button" data-tab="org-committee">Организационный комитет</button>
+              <div class="scroll-wrap" data-scroll-wrapper>
+                <div class="scroll-strip">
+                  <div class="tab-nav" role="tablist" aria-label="Организаторы и комитеты">
+                    <button class="tab-nav__button is-active" type="button" data-tab="orgs">Организаторы</button>
+                    <button class="tab-nav__button" type="button" data-tab="co-chairs">Сопредседатели</button>
+                    <button class="tab-nav__button" type="button" data-tab="program-committee">Программный комитет</button>
+                    <button class="tab-nav__button" type="button" data-tab="org-committee">Организационный комитет</button>
+                  </div>
+                </div>
+                <div class="scroll-controls" aria-label="Прокрутка вкладок">
+                  <button class="scroll-controls__button" type="button" data-scroll-direction="prev" aria-label="Прокрутить вкладки влево">
+                    <span aria-hidden="true">←</span>
+                  </button>
+                  <button class="scroll-controls__button" type="button" data-scroll-direction="next" aria-label="Прокрутить вкладки вправо">
+                    <span aria-hidden="true">→</span>
+                  </button>
                 </div>
               </div>
 
@@ -398,12 +407,31 @@
                 <br>Онлайн-часть форума запланирована на 28-29 апреля 2026 года.
               </p>
 
-              <p class="scroll-hint scroll-hint--mobile">Листайте даты и разделы влево и вправо</p>
-              <div class="scroll-strip">
-                <div class="program-days" id="programDays" aria-label="Дни программы"></div>
+              <div class="scroll-wrap" data-scroll-wrapper>
+                <div class="scroll-strip">
+                  <div class="program-days" id="programDays" aria-label="Дни программы"></div>
+                </div>
+                <div class="scroll-controls" aria-label="Прокрутка дат программы">
+                  <button class="scroll-controls__button" type="button" data-scroll-direction="prev" aria-label="Прокрутить даты влево">
+                    <span aria-hidden="true">←</span>
+                  </button>
+                  <button class="scroll-controls__button" type="button" data-scroll-direction="next" aria-label="Прокрутить даты вправо">
+                    <span aria-hidden="true">→</span>
+                  </button>
+                </div>
               </div>
-              <div class="scroll-strip">
-                <div class="program-halls" id="programHalls" aria-label="Площадки и треки"></div>
+              <div class="scroll-wrap" data-scroll-wrapper>
+                <div class="scroll-strip">
+                  <div class="program-halls" id="programHalls" aria-label="Площадки и треки"></div>
+                </div>
+                <div class="scroll-controls" aria-label="Прокрутка разделов программы">
+                  <button class="scroll-controls__button" type="button" data-scroll-direction="prev" aria-label="Прокрутить разделы влево">
+                    <span aria-hidden="true">←</span>
+                  </button>
+                  <button class="scroll-controls__button" type="button" data-scroll-direction="next" aria-label="Прокрутить разделы вправо">
+                    <span aria-hidden="true">→</span>
+                  </button>
+                </div>
               </div>
               <div class="program-content" id="programContent"></div>
             </div>
