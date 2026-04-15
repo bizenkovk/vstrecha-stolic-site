@@ -1686,7 +1686,7 @@ textarea:focus-visible {
 
   .greeting-card {
     min-height: auto;
-    padding: 22px 20px 24px;
+    padding: 24px 24px 28px;
   }
 
   .greetings-carousel {
@@ -1695,11 +1695,11 @@ textarea:focus-visible {
 
   .greetings-carousel__viewport {
     width: 100%;
-    padding: 0 8px;
+    padding: 0 12px;
   }
 
   .greetings-slide {
-    padding: 0 4px 8px;
+    padding: 0 6px 8px;
   }
 
   .greetings-carousel__controls {
@@ -1728,6 +1728,7 @@ textarea:focus-visible {
   .greeting-card__body {
     font-size: 0.98rem;
     line-height: 1.72;
+    padding-inline: 2px;
   }
 
   .tab-content,
