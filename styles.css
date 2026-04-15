@@ -1133,12 +1133,18 @@ textarea:focus-visible {
 }
 
 .program-content__intro {
+  display: grid;
+  gap: 6px;
   margin: 0 0 20px;
   padding: 16px 18px;
   border: 1px solid #e8dcc6;
   border-radius: 18px;
   background: #fffaf3;
   color: var(--muted);
+}
+
+.program-content__line {
+  display: block;
 }
 
 .program-roster {

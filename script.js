@@ -637,7 +637,13 @@ function formatProgramIntroText(value) {
     "\n$1"
   );
 
-  return formatMultilineText(normalizedValue.trim());
+  return normalizedValue
+    .trim()
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line) => `<span class="program-content__line">${escapeHtml(line)}</span>`)
+    .join("");
 }
 
 function initNonBreakingInitials(root = document.body) {
