@@ -1220,6 +1220,10 @@ textarea:focus-visible {
   gap: 14px;
 }
 
+.program-item--without-time {
+  grid-template-columns: 1fr;
+}
+
 .program-item__time {
   display: flex;
   align-items: stretch;
