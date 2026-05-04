@@ -1301,6 +1301,12 @@ textarea:focus-visible {
   box-shadow: 0 18px 48px rgba(38, 28, 20, 0.06);
 }
 
+.stream-card--compact {
+  max-width: 760px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .stream-card__intro {
   display: grid;
   gap: 12px;
@@ -1392,12 +1398,17 @@ textarea:focus-visible {
   margin-top: 34px;
 }
 
+.photo-archive--page {
+  margin-top: 0;
+}
+
 .photo-archive__header {
   display: grid;
   gap: 8px;
   margin-bottom: 18px;
 }
 
+.photo-archive__header h2,
 .photo-archive__header h3 {
   margin: 0;
   font-family: "Playfair Display", serif;
