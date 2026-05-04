@@ -267,6 +267,17 @@ textarea:focus-visible {
   background: var(--red-dark);
 }
 
+.banner-card__action--secondary {
+  border: 1px solid #decfb7;
+  background: rgba(255, 250, 243, 0.72);
+  color: var(--text);
+}
+
+.banner-card__action--secondary:hover {
+  border-color: var(--red-source);
+  color: var(--red-source);
+}
+
 .banner-card__media {
   position: relative;
   min-height: 560px;
