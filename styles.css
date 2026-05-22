@@ -1546,6 +1546,32 @@ textarea:focus-visible {
   background: #fbf7ee;
 }
 
+.site-footer .container {
+  display: grid;
+  gap: 10px;
+}
+
+.site-footer__credit {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  margin-top: 10px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(226, 216, 202, 0.78);
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.site-footer__credit img {
+  width: 168px;
+  max-width: 46vw;
+  height: auto;
+}
+
 .policy-card {
   padding: 28px;
   border: 1px solid var(--border);
