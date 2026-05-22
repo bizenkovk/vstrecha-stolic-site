@@ -1584,7 +1584,9 @@ textarea:focus-visible {
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
-  column-gap: 34px;
+  justify-content: flex-end;
+  justify-self: end;
+  column-gap: 14px;
   row-gap: 10px;
   width: fit-content;
   margin-top: 10px;
@@ -1594,6 +1596,7 @@ textarea:focus-visible {
   font-size: 0.86rem;
   font-weight: 700;
   line-height: 1.4;
+  text-align: right;
 }
 
 .site-footer__credit img {
@@ -2130,6 +2133,10 @@ textarea:focus-visible {
   .policy-card {
     padding: 18px;
     border-radius: 20px;
+  }
+
+  .site-footer__credit {
+    justify-self: end;
   }
 
   .cookie-consent {
